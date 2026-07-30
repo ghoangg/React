@@ -1,6 +1,5 @@
 const BASE_URL = "https://dummyjson.com";
 
-// Lấy danh sách sản phẩm
 export async function getProducts(limit: number = 12, skip: number = 0) {
   const response = await fetch(
     `${BASE_URL}/products?limit=${limit}&skip=${skip}`
@@ -13,7 +12,6 @@ export async function getProducts(limit: number = 12, skip: number = 0) {
   return await response.json();
 }
 
-// Lấy danh sách danh mục
 export async function getCategories() {
   const response = await fetch(`${BASE_URL}/products/categories`);
 
@@ -24,7 +22,6 @@ export async function getCategories() {
   return await response.json();
 }
 
-// Lấy sản phẩm theo danh mục
 export async function getProductsByCategory(
   category: string,
   limit: number = 12,
